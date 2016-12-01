@@ -1,0 +1,23 @@
+
+--创建sdp_ocs总数对比表
+create table tmp_sdp_ocs_comparison
+(
+starttime varchar2(20),
+sdp_counts varchar2(10),
+ocs_counts varchar2(10),
+sdp_amount varchar2(20),
+ocs_amount varchar2(20),
+amount_minus varchar2(20),
+amount_counts varchar2(20)
+);
+
+--日期	OCS临界值	SDP临界值	OCS当天充值用户	SDP当天充值用户	持平用户数
+create table tmp_com_detail
+(
+starttime varchar2(20),
+critical_ocs varchar2(10),
+critical_sdp varchar2(10),
+acct_ocs varchar2(10),
+acct_sdp varchar2(10),
+comm_acc varchar2(10)
+);
