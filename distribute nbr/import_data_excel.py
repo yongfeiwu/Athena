@@ -38,7 +38,7 @@ def inoracle(param):
     try:
         conn = cx_Oracle.connect('crm/hdycrm_smart@10.18.128.37:1522/crm ')
         curs = conn.cursor()
-        curs.execute('delete * FROM  tmp_wave')
+        curs.execute('delete FROM  tmp_wave')
         conn.commit()
         curs.prepare('insert into tmp_wave(iccid, imsi, acc_nbr) values(:1, :2, :3)')
         curs.executemany(None, param)
@@ -56,7 +56,7 @@ def inoracle(param):
 def main():
     reload(sys)
     # sys.setdefaultencoding('UTF-8')
-    excle_table_byindex('nbrs.xlsx')
+    excle_table_byindex('nbrlist.xlsx')
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 
 import cx_Oracle
 
-TABLE_NAME = 'wave_67'
+TABLE_NAME = 'tmp_wave'
 # 查询客户给的列表中的总数
 query_all_data = '''
 select * from %s
