@@ -66,13 +66,13 @@ def move2bak(wo_list):
     close(conn, curs)
 
 
-def updateOrderItermState():
+def updateOrderItermState(wo_list):
     conn = DB_Util.getConnect(CONSTANT.CONN_STR)
     curs = DB_Util.getCursor(conn)
-    uOrdersql = Sql_Util.getModifyOrderItermStateSql()
-    curs.execute(uOrdersql)
-
-    conn.commit()
+    for wo in wo_list:
+        uOrdersql = Sql_Util.getModifyOrderItermStateSql()
+        curs.execute(uOrdersql)
+        conn.commit()
     close(conn, curs)
 
 
